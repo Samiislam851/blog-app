@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
-import  Link  from 'next/link'
+import Link from 'next/link'
 import styles1 from '../styles/myStyle.module.css'
+import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+ 
+
   return (
     <main
       className={` ${inter.className}`}
@@ -27,20 +30,23 @@ export default function Home() {
       </Head>
 
 
-      <header>
-        <nav className='w-full'>
-          <ul className=' w-fit mx-auto flex gap-5 my-5 py-3 navStyle'>
-            <Link href={`/`}>   <li >Home</li></Link>
-            <Link href={`/about`}>     <li>About</li></Link>
-            <Link href={`/blogs`}>     <li>Blog</li></Link>
-            <Link href={`/contact`}>    <li>Contact</li></Link>
-          </ul>
-        </nav>
-      </header>
-
-      <section>
-        <h2 className='text-5xl md:text-8xl mt-20 font-semibold text-center'>Simple Blogs</h2>
-
+     
+      <section className='banner flex flex-col md:flex-row gap-16 items-center justify-center border-b shadow-sm '>
+        <div>
+        <h2 className='text-5xl md:text-7xl mt-20 font-semibold text-center'>Simple Blogs</h2>
+        <p className='text-xl my-5 text-center text-gray-500'>A simple project for starting next.js</p>
+        </div>
+        
+        <div className='w-auto'>
+          <Image src="/banner.avif"
+            alt='blogger banner'
+            loading="lazy"
+            width={500}
+            height={500}
+            blurDataURL="data:image/png;base64,..."
+            className='rounded-lg'
+          />
+        </div>
 
 
       </section>
