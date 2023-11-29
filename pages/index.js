@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -38,13 +37,19 @@ export default function Home() {
         </div>
         
         <div className='w-auto'>
-          <Image src="/banner.avif"
+          {/* <Image src="/banner.avif"
             alt='blogger banner'
             loading="lazy"
             width={500}
             height={500}
             blurDataURL="data:image/png;base64,..."
             className='rounded-lg'
+          /> */}
+          <img src="/banner.avif"
+            alt='blogger banner'
+            width={500}
+            height={500}
+           
           />
         </div>
 

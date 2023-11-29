@@ -1,5 +1,4 @@
 import  Head  from 'next/head';
-import  Image  from 'next/image';
 import React from 'react';
 
 const About = () => {
@@ -15,7 +14,7 @@ const About = () => {
                 </p>
 
                 <div className="flex items-center justify-center mb-8">
-          <Image className='rounded-xl' src='/about.png' width={700} height={700}/>
+          <img className='rounded-xl' alt="contact us blogpage" src='/about.png' width={700} height={700}/>
                 </div>
 
                 <p className="text-gray-700">
