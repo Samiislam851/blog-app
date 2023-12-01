@@ -32,7 +32,6 @@ const Blogs = (props) => {
 
 export const getServerSideProps = async (context) => {
     const res = await axios.get('/hello');
-    console.log(res.data);
     const blogs = res.data.blogs; 
     return { props: { blogs } }
 }

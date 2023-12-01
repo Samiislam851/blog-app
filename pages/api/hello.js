@@ -4,7 +4,6 @@ import * as fs from 'fs'
 export default function handler(req, res) {
 
 fs.readFile("blogData/blogdata.json",(err,data)=>{
-  console.log('error....',err);
 res.json(JSON.parse(data))
 })
 }

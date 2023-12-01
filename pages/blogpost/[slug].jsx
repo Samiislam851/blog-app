@@ -7,7 +7,6 @@ const BlogPost = (props) => {
     // const router = useRouter();
     // const { slug } = router.query
     const [blog, setBlog] = useState(props.blog);
-    console.log(blog);
     // console.log(slug);
     // useEffect(() => {
 
@@ -40,7 +39,6 @@ const BlogPost = (props) => {
 // }
 
 export const getStaticPaths = async () => {
-    console.log('got into getStaticPaths.................');
     return {
 
         paths: [
@@ -59,7 +57,6 @@ export const getStaticProps = async (context) => {
     const fetchedData = JSON.parse(res);
     const blogs = fetchedData.blogs;
     const blog = blogs?.find((blog) => blog.slug == slug);
-    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',blog);
     if (!blog) {
         return { notFound: true }; // Handle the case when the blog is not found
     }

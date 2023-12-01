@@ -6,12 +6,10 @@ const readFileAsync = promisify(fs.readFile);
 const handler = async (req, res) => {
   try {
 
-    console.log(req.query);
     const data = await readFileAsync('blogData/blogdata.json');
     const fetchedData = JSON.parse(data);
     const blogs = fetchedData.blogs;
     const blog = blogs?.find((blog) => blog.slug == req.query.slug);
-    console.log('blog....', blog);
     if (blog) {
       res.status(200).json(blog);
     } else {
